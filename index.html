@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RayMusic</title>
+
+    <!-- Icon -->
+    <link rel="icon" href="img/logo.png">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+<!-- Font Awesome -->
+<link
+rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ===========================
+            SIDEBAR
+    ============================ -->
+
+    <aside class="sidebar">
+
+        <h1 class="logo">
+
+            🎵 RayMusic
+
+        </h1>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Cari lagu..."
+            >
+
+        </div>
+
+        <div
+            class="playlist"
+            id="playlist">
+
+        </div>
+
+    </aside>
+
+
+    <!-- ===========================
+            PLAYER
+    ============================ -->
+
+    <main class="player">
+
+        <!-- Cover -->
+
+        <div class="cover-area">
+
+            <img
+                id="cover"
+                src=""
+                alt="Cover Album"
+            >
+
+        </div>
+
+
+        <!-- Judul -->
+
+        <h2 id="title">
+
+            Pilih Lagu
+
+        </h2>
+
+        <p id="artist">
+
+            RayMusic
+
+        </p>
+
+
+        <!-- Progress -->
+
+        <div class="progress-area">
+
+            <span id="current">
+
+                0:00
+
+            </span>
+
+            <input
+                type="range"
+                id="progress"
+                value="0"
+                min="0"
+                max="100"
+            >
+
+            <span id="duration">
+
+                0:00
+
+            </span>
+
+        </div>
+
+
+        <!-- Tombol -->
+
+        <div class="controls">
+
+    <button id="shuffleBtn">
+        <i class="fa-solid fa-shuffle"></i>
+    </button>
+
+    <button id="prevBtn">
+        <i class="fa-solid fa-backward-step"></i>
+    </button>
+
+    <button id="playBtn">
+        <i class="fa-solid fa-play"></i>
+    </button>
+
+    <button id="nextBtn">
+        <i class="fa-solid fa-forward-step"></i>
+    </button>
+
+    <button id="repeatBtn">
+        <i class="fa-solid fa-repeat"></i>
+    </button>
+
+</div>
+
+<div class="volume">
+           
+ 🔊
+
+            <input
+                type="range"
+                id="volume"
+                min="0"
+                max="1"
+                step="0.01"
+                value="1"
+            >
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- Audio -->
+
+<audio id="audio"></audio>
+
+
+<!-- Script -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
