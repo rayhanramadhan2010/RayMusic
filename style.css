@@ -515,3 +515,79 @@ font-size:28px;
 }
 
 }
+/* ========================
+      GALAU RAIN EFFECT
+======================== */
+
+.rain {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.drop {
+    position: absolute;
+    top: -100px;
+    width: 1px;
+    height: 70px;
+    background: linear-gradient(
+        transparent,
+        rgba(180, 210, 255, 0.45)
+    );
+    animation: rain linear infinite;
+}
+
+@keyframes rain {
+    from {
+        transform: translateY(-100px);
+    }
+
+    to {
+        transform: translateY(110vh);
+    }
+}
+
+/* Kabut tipis */
+.fog {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 30%,
+            rgba(20, 30, 60, 0.35) 100%
+        );
+}
+
+/* Kilatan cahaya */
+.lightning {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 2;
+    background: rgba(180, 210, 255, 0.08);
+    opacity: 0;
+    animation: lightning 8s infinite;
+}
+
+@keyframes lightning {
+    0%, 92%, 96%, 100% {
+        opacity: 0;
+    }
+
+    93% {
+        opacity: 0.5;
+    }
+
+    94% {
+        opacity: 0;
+    }
+
+    95% {
+        opacity: 0.25;
+    }
+}
