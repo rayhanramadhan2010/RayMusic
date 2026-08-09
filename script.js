@@ -461,3 +461,31 @@ repeatBtn.addEventListener("click", () => {
     }
 
 });
+/* ========================
+        RAIN EFFECT
+======================== */
+
+const rain = document.querySelector(".rain");
+
+for (let i = 0; i < 70; i++) {
+
+    const drop = document.createElement("div");
+
+    drop.classList.add("drop");
+
+    drop.style.left = Math.random() * 100 + "%";
+
+    drop.style.animationDuration =
+        (0.5 + Math.random() * 0.8) + "s";
+
+    drop.style.animationDelay =
+        Math.random() * 2 + "s";
+
+    drop.style.opacity =
+        0.2 + Math.random() * 0.5;
+
+    drop.style.height =
+        (40 + Math.random() * 50) + "px";
+
+    rain.appendChild(drop);
+}
