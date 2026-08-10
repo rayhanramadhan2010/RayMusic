@@ -1,593 +1,1280 @@
 /* ===================================================
-RAYMUSIC
-STYLE.CSS
+   RAYMUSIC
+   STYLE.CSS
 =================================================== */
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
 }
+
+
+/* ===================================================
+   BODY
+=================================================== */
 
 body{
 
-background:linear-gradient(135deg,#0f172a,#1e293b,#312e81);  
+    background:
+        linear-gradient(
+            135deg,
+            #0f172a,
+            #1e293b,
+            #312e81
+        );
 
-min-height:100vh;  
+    min-height:100vh;
 
-color:white;
+    color:white;
 
 }
+
+
+/* ===================================================
+   CONTAINER
+=================================================== */
 
 .container{
 
-display:flex;  
+    display:flex;
 
-min-height:100vh;
+    min-height:100vh;
+
+    position:relative;
+
+    z-index:5;
 
 }
 
-/* ===============================
-SIDEBAR
-================================ */
+
+/* ===================================================
+   SIDEBAR
+=================================================== */
 
 .sidebar{
 
-width:320px;  
+    width:320px;
 
-background:rgba(255,255,255,.08);  
+    background:rgba(255,255,255,.08);
 
-backdrop-filter:blur(18px);  
+    backdrop-filter:blur(18px);
 
-padding:30px;  
+    padding:30px;
 
-border-right:1px solid rgba(255,255,255,.15);
+    border-right:1px solid rgba(255,255,255,.15);
 
 }
 
 .logo{
 
-font-size:32px;  
+    font-size:32px;
 
-font-weight:700;  
+    font-weight:700;
 
-margin-bottom:35px;  
+    margin-bottom:35px;
 
-text-align:center;
+    text-align:center;
 
 }
 
 .search-box{
 
-margin-bottom:25px;
+    margin-bottom:25px;
 
 }
 
 .search-box input{
 
-width:100%;  
+    width:100%;
 
-padding:13px;  
+    padding:13px;
 
-border:none;  
+    border:none;
 
-outline:none;  
+    outline:none;
 
-border-radius:14px;  
+    border-radius:14px;
 
-background:rgba(255,255,255,.15);  
+    background:rgba(255,255,255,.15);
 
-color:white;  
+    color:white;
 
-font-size:15px;
+    font-size:15px;
 
 }
 
 .search-box input::placeholder{
 
-color:#ddd;
+    color:#ddd;
 
 }
 
-/* ===============================
-PLAYLIST
-================================ */
+
+/* ===================================================
+   PLAYLIST
+=================================================== */
 
 .playlist{
 
-display:flex;  
+    display:flex;
 
-flex-direction:column;  
+    flex-direction:column;
 
-gap:15px;  
+    gap:15px;
 
-overflow-y:auto;  
+    overflow-y:auto;
 
-max-height:70vh;
+    max-height:70vh;
 
 }
 
 .song{
 
-display:flex;  
+    display:flex;
 
-align-items:center;  
+    align-items:center;
 
-gap:12px;  
+    gap:12px;
 
-padding:12px;  
+    padding:12px;
 
-border-radius:14px;  
+    border-radius:14px;
 
-cursor:pointer;  
+    cursor:pointer;
 
-transition:.25s;
+    transition:.25s;
 
 }
 
 .song:hover{
 
-background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.15);
 
 }
 
 .song.active{
 
-background:#6366f1;
+    background:#6366f1;
 
 }
 
 .song img{
 
-width:55px;  
+    width:55px;
 
-height:55px;  
+    height:55px;
 
-object-fit:cover;  
+    object-fit:cover;
 
-border-radius:10px;
+    border-radius:10px;
 
 }
 
 .song-info h3{
 
-font-size:15px;
+    font-size:15px;
 
 }
 
 .song-info p{
 
-font-size:13px;  
+    font-size:13px;
 
-color:#ddd;
+    color:#ddd;
 
 }
 
-/* ===============================
-PLAYER
-================================ */
+
+/* ===================================================
+   PLAYER
+=================================================== */
 
 .player{
 
-flex:1;  
+    flex:1;
 
-display:flex;  
+    display:flex;
 
-flex-direction:column;  
+    flex-direction:column;
 
-justify-content:center;  
+    justify-content:center;
 
-align-items:center;  
+    align-items:center;
 
-padding:40px;
+    padding:40px;
 
 }
 
 .cover-area{
 
-width:320px;  
+    width:320px;
 
-height:320px;  
+    height:320px;
 
-border-radius:30px;  
+    border-radius:30px;
 
-overflow:hidden;  
+    overflow:hidden;
 
-box-shadow:0 20px 40px rgba(0,0,0,.35);
+    box-shadow:
+
+        0 20px 40px rgba(0,0,0,.35);
 
 }
 
 .cover-area img{
 
-width:100%;  
+    width:100%;
 
-height:100%;  
+    height:100%;
 
-object-fit:cover;  
+    object-fit:cover;
 
-transition:.4s;
+    transition:.4s;
 
 }
 
+
+/* ===================================================
+   JUDUL
+=================================================== */
+
 #title{
 
-margin-top:30px;  
+    margin-top:30px;
 
-font-size:30px;
+    font-size:30px;
 
 }
 
 #artist{
 
-margin-top:8px;  
+    margin-top:8px;
 
-color:#cbd5e1;  
+    color:#cbd5e1;
 
-font-size:18px;
+    font-size:18px;
 
 }
 
-/* ===========================================
-PROGRESS BAR
-=========================================== */
+
+/* ===================================================
+   PROGRESS BAR
+=================================================== */
 
 .progress-area{
 
-width:min(650px,90%);  
+    width:min(650px,90%);
 
-margin-top:35px;  
+    margin-top:35px;
 
-display:flex;  
+    display:flex;
 
-align-items:center;  
+    align-items:center;
 
-gap:15px;
+    gap:15px;
 
 }
 
 .progress-area span{
 
-width:55px;  
+    width:55px;
 
-text-align:center;  
+    text-align:center;
 
-font-size:14px;  
+    font-size:14px;
 
-color:#d1d5db;
+    color:#d1d5db;
 
 }
 
 #progress{
 
-flex:1;  
+    flex:1;
 
-cursor:pointer;  
+    cursor:pointer;
 
-appearance:none;  
+    appearance:none;
 
-height:6px;  
+    height:6px;
 
-border-radius:999px;  
+    border-radius:999px;
 
-background:rgba(255,255,255,.25);
+    background:rgba(255,255,255,.25);
 
 }
 
 #progress::-webkit-slider-thumb{
 
-appearance:none;  
+    appearance:none;
 
-width:18px;  
+    width:18px;
 
-height:18px;  
+    height:18px;
 
-border-radius:50%;  
+    border-radius:50%;
 
-background:#60a5fa;  
+    background:#60a5fa;
 
-cursor:pointer;  
+    cursor:pointer;
 
-transition:.25s;
+    transition:.25s;
 
 }
 
 #progress::-webkit-slider-thumb:hover{
 
-transform:scale(1.2);
+    transform:scale(1.2);
 
 }
 
-/* ===========================================
-CONTROL BUTTON
-=========================================== */
+
+/* ===================================================
+   CONTROL BUTTON
+=================================================== */
 
 .controls{
 
-margin-top:35px;  
+    margin-top:35px;
 
-display:flex;  
+    display:flex;
 
-align-items:center;  
+    align-items:center;
 
-gap:20px;
+    gap:20px;
 
 }
 
 .controls button{
 
-border:none;  
+    border:none;
 
-cursor:pointer;  
+    cursor:pointer;
 
-background:rgba(255,255,255,.12);  
+    background:rgba(255,255,255,.12);
 
-color:white;  
+    color:white;
 
-width:60px;  
+    width:60px;
 
-height:60px;  
+    height:60px;
 
-border-radius:50%;  
+    border-radius:50%;
 
-font-size:22px;  
+    font-size:22px;
 
-transition:.25s;  
+    transition:.25s;
 
-backdrop-filter:blur(10px);
+    backdrop-filter:blur(10px);
 
 }
 
 .controls button:hover{
 
-transform:translateY(-5px);  
+    transform:translateY(-5px);
 
-background:#6366f1;
+    background:#6366f1;
 
 }
 
 #playBtn{
 
-width:78px;  
+    width:78px;
 
-height:78px;  
+    height:78px;
 
-font-size:30px;  
+    font-size:30px;
 
-background:#2563eb;
+    background:#2563eb;
 
 }
 
 #playBtn:hover{
 
-background:#1d4ed8;
+    background:#1d4ed8;
 
 }
 
-/* ===========================================
-VOLUME
-=========================================== */
+
+/* ===================================================
+   VOLUME
+=================================================== */
 
 .volume{
 
-margin-top:35px;  
+    margin-top:35px;
 
-display:flex;  
+    display:flex;
 
-align-items:center;  
+    align-items:center;
 
-gap:15px;  
+    gap:15px;
 
-width:min(400px,90%);
+    width:min(400px,90%);
 
 }
 
 #volume{
 
-flex:1;  
+    flex:1;
 
-appearance:none;  
+    appearance:none;
 
-cursor:pointer;  
+    cursor:pointer;
 
-height:6px;  
+    height:6px;
 
-border-radius:999px;  
+    border-radius:999px;
 
-background:rgba(255,255,255,.25);
+    background:rgba(255,255,255,.25);
 
 }
 
 #volume::-webkit-slider-thumb{
 
-appearance:none;  
+    appearance:none;
 
-width:16px;  
+    width:16px;
 
-height:16px;  
+    height:16px;
 
-border-radius:50%;  
+    border-radius:50%;
 
-background:#60a5fa;
+    background:#60a5fa;
 
 }
 
-/* ===========================================
-COVER ANIMATION
-=========================================== */
+
+/* ===================================================
+   COVER ANIMATION
+=================================================== */
 
 .cover-area img{
-transition: .3s;
+
+    transition:.3s;
+
 }
 
-/* ===========================================
-SCROLLBAR
-=========================================== */
+
+/* ===================================================
+   SCROLLBAR
+=================================================== */
 
 .playlist::-webkit-scrollbar{
 
-width:6px;
+    width:6px;
 
 }
 
 .playlist::-webkit-scrollbar-thumb{
 
-background:#6366f1;  
+    background:#6366f1;
 
-border-radius:999px;
+    border-radius:999px;
 
 }
 
-/* ===========================================
-RESPONSIVE
-=========================================== */
+
+/* ===================================================
+   RESPONSIVE
+=================================================== */
 
 @media(max-width:900px){
 
-.container{
+    .container{
 
-flex-direction:column;
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        width:100%;
+
+        border-right:none;
+
+        border-bottom:1px solid rgba(255,255,255,.15);
+
+    }
+
+    .player{
+
+        padding:25px;
+
+    }
 
 }
 
-.sidebar{
-
-width:100%;  
-
-border-right:none;  
-
-border-bottom:1px solid rgba(255,255,255,.15);
-
-}
-
-.player{
-
-padding:25px;
-
-}
-
-}
 
 @media(max-width:600px){
 
-.cover-area{
+    .cover-area{
 
-width:240px;  
+        width:240px;
 
-height:240px;
+        height:240px;
 
-}
-
-#title{
-
-font-size:24px;
-
-}
-
-.controls{
-
-gap:12px;
-
-}
-
-.controls button{
-
-width:52px;  
-
-height:52px;  
-
-font-size:18px;
-
-}
-
-#playBtn{
-
-width:68px;  
-
-height:68px;
-
-}
-
-.logo{
-
-font-size:28px;
-
-}
-
-}
-/* ========================
-      GALAU RAIN EFFECT
-======================== */
-
-.rain {
-    position: fixed;
-    inset: 0;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.drop {
-    position: absolute;
-    top: -100px;
-    width: 1px;
-    height: 70px;
-    background: linear-gradient(
-        transparent,
-        rgba(180, 210, 255, 0.45)
-    );
-    animation: rain linear infinite;
-}
-
-@keyframes rain {
-    from {
-        transform: translateY(-100px);
     }
 
-    to {
-        transform: translateY(110vh);
+    #title{
+
+        font-size:24px;
+
     }
+
+    .controls{
+
+        gap:12px;
+
+    }
+
+    .controls button{
+
+        width:52px;
+
+        height:52px;
+
+        font-size:18px;
+
+    }
+
+    #playBtn{
+
+        width:68px;
+
+        height:68px;
+
+    }
+
+    .logo{
+
+        font-size:28px;
+
+    }
+
 }
 
-/* Kabut tipis */
-.fog {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
+
+/* ===================================================
+   PIXEL RAIN SCENE
+=================================================== */
+
+.pixel-scene{
+
+    position:fixed;
+
+    inset:0;
+
+    overflow:hidden;
+
+    pointer-events:none;
+
+    z-index:0;
+
     background:
+
+        linear-gradient(
+            to bottom,
+            #10182e 0%,
+            #151f3a 55%,
+            #090d18 100%
+        );
+
+}
+
+
+/* ===================================================
+   BULAN
+=================================================== */
+
+.moon{
+
+    position:absolute;
+
+    width:70px;
+
+    height:70px;
+
+    top:9%;
+
+    right:12%;
+
+    background:#dbe7ff;
+
+    border-radius:50%;
+
+    box-shadow:
+
+        0 0 25px
+        rgba(200,220,255,.25);
+
+}
+
+
+/* ===================================================
+   KOTA
+=================================================== */
+
+.city{
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:0;
+
+    width:100%;
+
+    height:130px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    gap:12px;
+
+    opacity:.55;
+
+}
+
+.city span{
+
+    display:block;
+
+    width:80px;
+
+    background:#080c17;
+
+    position:relative;
+
+}
+
+.city span:nth-child(1){
+
+    height:90px;
+
+}
+
+.city span:nth-child(2){
+
+    height:125px;
+
+}
+
+.city span:nth-child(3){
+
+    height:70px;
+
+}
+
+.city span:nth-child(4){
+
+    height:105px;
+
+}
+
+.city span:nth-child(5){
+
+    height:145px;
+
+}
+
+.city span:nth-child(6){
+
+    height:85px;
+
+}
+
+.city span:nth-child(7){
+
+    height:115px;
+
+}
+
+
+/* Lampu gedung */
+
+.city span::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:5px;
+
+    height:5px;
+
+    background:#59688d;
+
+    box-shadow:
+
+        20px 20px #59688d,
+        45px 45px #59688d,
+        10px 70px #59688d,
+        55px 85px #59688d;
+
+}
+
+
+/* ===================================================
+   HUJAN
+=================================================== */
+
+.rain{
+
+    position:absolute;
+
+    inset:0;
+
+    overflow:hidden;
+
+}
+
+.drop{
+
+    position:absolute;
+
+    top:-80px;
+
+    width:2px;
+
+    height:55px;
+
+    background:
+
+        rgba(180,210,255,.35);
+
+    animation:
+
+        rain-fall linear infinite;
+
+}
+
+@keyframes rain-fall{
+
+    from{
+
+        transform:
+            translateY(-100px);
+
+    }
+
+    to{
+
+        transform:
+            translateY(110vh);
+
+    }
+
+}
+
+
+/* ===================================================
+   PIXEL GUY
+=================================================== */
+
+.pixel-guy{
+
+    position:absolute;
+
+    bottom:38px;
+
+    left:50%;
+
+    width:100px;
+
+    height:180px;
+
+    transform:
+        translateX(-50%);
+
+    image-rendering:pixelated;
+
+    animation:
+
+        sad-breath
+        3s ease-in-out infinite;
+
+}
+
+
+/* Kepala */
+
+.head{
+
+    position:absolute;
+
+    width:38px;
+
+    height:42px;
+
+    left:31px;
+
+    top:55px;
+
+    background:#c68f72;
+
+    box-shadow:
+
+        inset -7px 0 #a96f5b;
+
+}
+
+
+/* Rambut */
+
+.hair{
+
+    position:absolute;
+
+    width:43px;
+
+    height:20px;
+
+    left:28px;
+
+    top:50px;
+
+    background:#16151b;
+
+    box-shadow:
+
+        5px 10px #16151b,
+        15px 15px #16151b,
+        25px 10px #16151b;
+
+}
+
+
+/* Tubuh */
+
+.body{
+
+    position:absolute;
+
+    width:55px;
+
+    height:58px;
+
+    left:23px;
+
+    top:97px;
+
+    background:#252b43;
+
+    box-shadow:
+
+        inset -8px 0 #1a1e31;
+
+}
+
+
+/* Tangan */
+
+.arm{
+
+    position:absolute;
+
+    width:13px;
+
+    height:48px;
+
+    background:#c68f72;
+
+    top:101px;
+
+}
+
+.left-arm{
+
+    left:13px;
+
+    transform:rotate(15deg);
+
+}
+
+.right-arm{
+
+    right:13px;
+
+    transform:rotate(-15deg);
+
+}
+
+
+/* Kaki */
+
+.leg{
+
+    position:absolute;
+
+    width:18px;
+
+    height:42px;
+
+    background:#151925;
+
+    top:150px;
+
+}
+
+.left-leg{
+
+    left:30px;
+
+}
+
+.right-leg{
+
+    left:52px;
+
+}
+
+
+/* Sepatu */
+
+.left-leg::after,
+.right-leg::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-5px;
+
+    width:25px;
+
+    height:8px;
+
+    background:#080a10;
+
+}
+
+.left-leg::after{
+
+    left:-4px;
+
+}
+
+.right-leg::after{
+
+    left:-3px;
+
+}
+
+
+/* ===================================================
+   HEADPHONE
+=================================================== */
+
+.headphone{
+
+    position:absolute;
+
+    width:10px;
+
+    height:22px;
+
+    top:65px;
+
+    background:#11131b;
+
+    border-radius:4px;
+
+}
+
+.left-phone{
+
+    left:24px;
+
+}
+
+.right-phone{
+
+    right:24px;
+
+}
+
+
+/* ===================================================
+   PAYUNG
+=================================================== */
+
+.umbrella{
+
+    position:absolute;
+
+    width:150px;
+
+    height:80px;
+
+    left:-25px;
+
+    top:5px;
+
+}
+
+
+/* Atap */
+
+.umbrella-top{
+
+    position:absolute;
+
+    width:150px;
+
+    height:70px;
+
+    background:#343c68;
+
+    border-radius:
+
+        75px 75px 10px 10px;
+
+    box-shadow:
+
+        inset 0 -10px #272e55;
+
+}
+
+
+/* Ujung payung */
+
+.umbrella-top::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:-5px;
+
+    left:0;
+
+    width:150px;
+
+    height:12px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            transparent 15%,
+            #343c68 16%,
+            #343c68 35%,
+            transparent 36%,
+            transparent 64%,
+            #343c68 65%,
+            #343c68 85%,
+            transparent 86%
+        );
+
+}
+
+
+/* Gagang */
+
+.umbrella-handle{
+
+    position:absolute;
+
+    width:3px;
+
+    height:95px;
+
+    left:74px;
+
+    top:58px;
+
+    background:#151823;
+
+}
+
+
+/* ===================================================
+   LAMPU JALAN
+=================================================== */
+
+.street-light{
+
+    position:absolute;
+
+    right:12%;
+
+    bottom:25px;
+
+    height:230px;
+
+    width:30px;
+
+}
+
+.lamp{
+
+    position:absolute;
+
+    width:30px;
+
+    height:20px;
+
+    top:0;
+
+    background:#d6ddff;
+
+    box-shadow:
+
+        0 0 30px
+        rgba(200,210,255,.5);
+
+}
+
+.pole{
+
+    position:absolute;
+
+    width:6px;
+
+    height:230px;
+
+    left:12px;
+
+    background:#121622;
+
+}
+
+
+/* ===================================================
+   GENANGAN
+=================================================== */
+
+.puddle{
+
+    position:absolute;
+
+    bottom:20px;
+
+    left:50%;
+
+    width:260px;
+
+    height:22px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:
+
+        rgba(80,110,160,.15);
+
+    box-shadow:
+
+        0 0 15px
+        rgba(100,130,180,.12);
+
+}
+
+
+/* ===================================================
+   ANIMASI PIXEL GUY
+=================================================== */
+
+@keyframes sad-breath{
+
+    0%,100%{
+
+        transform:
+            translateX(-50%)
+            translateY(0);
+
+    }
+
+    50%{
+
+        transform:
+            translateX(-50%)
+            translateY(2px);
+
+    }
+
+}
+
+
+/* ===================================================
+   KABUT TIPIS
+=================================================== */
+
+.pixel-scene::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+
         radial-gradient(
             ellipse at center,
             transparent 30%,
-            rgba(20, 30, 60, 0.35) 100%
+            rgba(20,30,60,.35) 100%
         );
+
 }
 
-/* Kilatan cahaya */
-.lightning {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 2;
-    background: rgba(180, 210, 255, 0.08);
-    opacity: 0;
-    animation: lightning 8s infinite;
+
+/* ===================================================
+   KILATAN CAHAYA
+=================================================== */
+
+.pixel-scene::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        rgba(180,210,255,.08);
+
+    opacity:0;
+
+    animation:
+
+        lightning 8s infinite;
+
 }
 
-@keyframes lightning {
-    0%, 92%, 96%, 100% {
-        opacity: 0;
+@keyframes lightning{
+
+    0%,92%,96%,100%{
+
+        opacity:0;
+
     }
 
-    93% {
-        opacity: 0.5;
+    93%{
+
+        opacity:.5;
+
     }
 
-    94% {
-        opacity: 0;
+    94%{
+
+        opacity:0;
+
     }
 
-    95% {
-        opacity: 0.25;
+    95%{
+
+        opacity:.25;
+
     }
+
 }
