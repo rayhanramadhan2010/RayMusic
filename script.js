@@ -93,27 +93,28 @@ const songs = [
         src: "music/All Too Well.mp3",
         cover: "img/All Too Well.jpg"
     },
-    
-    { 
-      title:"august",
-      artist:"Taylor Swift",
-      src:"music/august.mp3",
-      cover:"img/august.jpg"
-    },  
-    
-    { 
-      title:"Fix You",
-      artist:"Coldplay",
-      src:"music/Fix You.mp3",
-      cover:"img/Fix You.jpg"
-    },
-    
+
     {
-      title:"Star",
-      artist:"Colde",
-      src:"music/Star.mp3",
-      cover:"img/Star.jpg"
+        title: "august",
+        artist: "Taylor Swift",
+        src: "music/august.mp3",
+        cover: "img/august.jpg"
     },
+
+    {
+        title: "Fix You",
+        artist: "Coldplay",
+        src: "music/Fix You.mp3",
+        cover: "img/Fix You.jpg"
+    },
+
+    {
+        title: "Star",
+        artist: "Colde",
+        src: "music/Star.mp3",
+        cover: "img/Star.jpg"
+    }
+
 ];
 
 
@@ -129,11 +130,18 @@ let shuffle = false;
 
 let repeat = false;
 
+
 /*========================
       FORMAT WAKTU
 ========================*/
 
 function formatTime(seconds){
+
+    if(isNaN(seconds)){
+
+        return "0:00";
+
+    }
 
     const minute = Math.floor(seconds / 60);
 
@@ -160,7 +168,14 @@ function loadSong(index){
 
     audio.src = song.src;
 
+    progress.value = 0;
+
+    current.textContent = "0:00";
+
+    duration.textContent = "0:00";
+
 }
+
 
 /*========================
       PLAYLIST
@@ -168,37 +183,37 @@ function loadSong(index){
 
 function renderPlaylist(){
 
-    playlist.innerHTML="";
+    playlist.innerHTML = "";
 
     songs.forEach((song,index)=>{
 
-        const item=document.createElement("div");
+        const item = document.createElement("div");
 
-        item.className="song";
+        item.className = "song";
 
-        if(index===currentSong){
+        if(index === currentSong){
 
             item.classList.add("active");
 
         }
 
-        item.innerHTML=`
+        item.innerHTML = `
 
-        <img src="${song.cover}">
+            <img src="${song.cover}">
 
-        <div class="song-info">
+            <div class="song-info">
 
-            <h3>${song.title}</h3>
+                <h3>${song.title}</h3>
 
-            <p>${song.artist}</p>
+                <p>${song.artist}</p>
 
-        </div>
+            </div>
 
         `;
 
-        item.onclick=()=>{
+        item.onclick = ()=>{
 
-            currentSong=index;
+            currentSong = index;
 
             loadSong(currentSong);
 
@@ -214,6 +229,7 @@ function renderPlaylist(){
 
 }
 
+
 /*========================
         START
 ========================*/
@@ -222,15 +238,16 @@ loadSong(currentSong);
 
 renderPlaylist();
 
-audio.volume=1;
+audio.volume = 1;
 
-volume.value=1;
+volume.value = 1;
+
 
 /*========================
       PLAY MUSIC
 ========================*/
 
-function playMusic() {
+function playMusic(){
 
     audio.play();
 
@@ -238,7 +255,8 @@ function playMusic() {
 
     cover.classList.add("playing");
 
-    playBtn.innerHTML = '<i class="fa-solid fa-pause"></i>';
+    playBtn.innerHTML =
+        '<i class="fa-solid fa-pause"></i>';
 
 }
 
@@ -247,7 +265,7 @@ function playMusic() {
       PAUSE MUSIC
 ========================*/
 
-function pauseMusic() {
+function pauseMusic(){
 
     audio.pause();
 
@@ -255,7 +273,8 @@ function pauseMusic() {
 
     cover.classList.remove("playing");
 
-    playBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+    playBtn.innerHTML =
+        '<i class="fa-solid fa-play"></i>';
 
 }
 
@@ -264,13 +283,13 @@ function pauseMusic() {
     PLAY / PAUSE BUTTON
 ========================*/
 
-playBtn.addEventListener("click", () => {
+playBtn.addEventListener("click", ()=>{
 
-    if (isPlaying) {
+    if(isPlaying){
 
         pauseMusic();
 
-    } else {
+    }else{
 
         playMusic();
 
@@ -278,12 +297,12 @@ playBtn.addEventListener("click", () => {
 
 });
 
+
 /*========================
       NEXT SONG
 ========================*/
 
-function nextSong() {
-
+function nextSong(){
 
     if(shuffle){
 
@@ -291,19 +310,21 @@ function nextSong() {
 
         do{
 
-            randomSong = Math.floor(Math.random()*songs.length);
+            randomSong =
+                Math.floor(
+                    Math.random() * songs.length
+                );
 
-        }while(randomSong === currentSong);
-
+        }while(
+            randomSong === currentSong &&
+            songs.length > 1
+        );
 
         currentSong = randomSong;
 
-
     }else{
 
-
         currentSong++;
-
 
         if(currentSong >= songs.length){
 
@@ -313,25 +334,24 @@ function nextSong() {
 
     }
 
-
     loadSong(currentSong);
 
     renderPlaylist();
 
     playMusic();
 
-
 }
+
 
 /*========================
       PREVIOUS SONG
 ========================*/
 
-function prevSong() {
+function prevSong(){
 
     currentSong--;
 
-    if (currentSong < 0) {
+    if(currentSong < 0){
 
         currentSong = songs.length - 1;
 
@@ -350,15 +370,18 @@ nextBtn.addEventListener("click", nextSong);
 
 prevBtn.addEventListener("click", prevSong);
 
+
 /*========================
     DURASI LAGU
 ========================*/
 
-audio.addEventListener("loadedmetadata", () => {
+audio.addEventListener("loadedmetadata", ()=>{
 
-    progress.max = Math.floor(audio.duration);
+    progress.max =
+        Math.floor(audio.duration);
 
-    duration.textContent = formatTime(audio.duration);
+    duration.textContent =
+        formatTime(audio.duration);
 
 });
 
@@ -367,11 +390,13 @@ audio.addEventListener("loadedmetadata", () => {
     PROGRESS BERJALAN
 ========================*/
 
-audio.addEventListener("timeupdate", () => {
+audio.addEventListener("timeupdate", ()=>{
 
-    progress.value = Math.floor(audio.currentTime);
+    progress.value =
+        Math.floor(audio.currentTime);
 
-    current.textContent = formatTime(audio.currentTime);
+    current.textContent =
+        formatTime(audio.currentTime);
 
 });
 
@@ -380,28 +405,30 @@ audio.addEventListener("timeupdate", () => {
     GESER PROGRESS
 ========================*/
 
-progress.addEventListener("input", () => {
+progress.addEventListener("input", ()=>{
 
-    audio.currentTime = progress.value;
+    audio.currentTime =
+        progress.value;
 
 });
+
 
 /*========================
         VOLUME
 ========================*/
 
-volume.addEventListener("input", () => {
+volume.addEventListener("input", ()=>{
 
     audio.volume = volume.value;
 
 });
 
+
 /*========================
     AUTO NEXT LAGU
 ========================*/
 
-audio.addEventListener("ended", () => {
-
+audio.addEventListener("ended", ()=>{
 
     if(repeat){
 
@@ -409,33 +436,32 @@ audio.addEventListener("ended", () => {
 
         playMusic();
 
-
     }else{
-
 
         nextSong();
 
-
     }
 
-
 });
+
 
 /*========================
         SHUFFLE
 ========================*/
 
-shuffleBtn.addEventListener("click", () => {
+shuffleBtn.addEventListener("click", ()=>{
 
     shuffle = !shuffle;
 
     if(shuffle){
 
-        shuffleBtn.style.background = "#6366f1";
+        shuffleBtn.style.background =
+            "#6366f1";
 
     }else{
 
-        shuffleBtn.style.background = "rgba(255,255,255,.12)";
+        shuffleBtn.style.background =
+            "rgba(255,255,255,.12)";
 
     }
 
@@ -446,46 +472,94 @@ shuffleBtn.addEventListener("click", () => {
         REPEAT
 ========================*/
 
-repeatBtn.addEventListener("click", () => {
+repeatBtn.addEventListener("click", ()=>{
 
     repeat = !repeat;
 
     if(repeat){
 
-        repeatBtn.style.background = "#6366f1";
+        repeatBtn.style.background =
+            "#6366f1";
 
     }else{
 
-        repeatBtn.style.background = "rgba(255,255,255,.12)";
+        repeatBtn.style.background =
+            "rgba(255,255,255,.12)";
 
     }
 
 });
-/* ========================
+
+
+/*========================
+        SEARCH LAGU
+========================*/
+
+searchInput.addEventListener("input", ()=>{
+
+    const keyword =
+        searchInput.value.toLowerCase();
+
+    const items =
+        playlist.querySelectorAll(".song");
+
+    songs.forEach((song,index)=>{
+
+        const item = items[index];
+
+        const match =
+            song.title.toLowerCase().includes(keyword) ||
+            song.artist.toLowerCase().includes(keyword);
+
+        if(match){
+
+            item.style.display = "flex";
+
+        }else{
+
+            item.style.display = "none";
+
+        }
+
+    });
+
+});
+
+
+/*========================
         RAIN EFFECT
-======================== */
+========================*/
 
-const rain = document.querySelector(".rain");
+const rain =
+    document.querySelector(".rain");
 
-for (let i = 0; i < 70; i++) {
 
-    const drop = document.createElement("div");
+if(rain){
 
-    drop.classList.add("drop");
+    for(let i = 0; i < 90; i++){
 
-    drop.style.left = Math.random() * 100 + "%";
+        const drop =
+            document.createElement("div");
 
-    drop.style.animationDuration =
-        (0.5 + Math.random() * 0.8) + "s";
+        drop.classList.add("drop");
 
-    drop.style.animationDelay =
-        Math.random() * 2 + "s";
+        drop.style.left =
+            Math.random() * 100 + "%";
 
-    drop.style.opacity =
-        0.2 + Math.random() * 0.5;
+        drop.style.height =
+            (30 + Math.random() * 50) + "px";
 
-    drop.style.height =
-        (40 + Math.random() * 50) + "px";
+        drop.style.animationDuration =
+            (0.5 + Math.random() * 0.8) + "s";
 
-    rain.appendChild(drop);
+        drop.style.animationDelay =
+            Math.random() * 2 + "s";
+
+        drop.style.opacity =
+            0.15 + Math.random() * 0.5;
+
+        rain.appendChild(drop);
+
+    }
+
 }
