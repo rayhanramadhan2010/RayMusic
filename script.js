@@ -113,6 +113,12 @@ const songs = [
         artist: "Colde",
         src: "music/Star.mp3",
         cover: "img/Star.jpg"
+    },
+  {
+    title: "cherry flavoured love inside your heart",
+    artist:"wave to earth",
+    src:"music/cherry flavoured love inside your heart.mp3",
+    cover:"img/cherry flavoured love inside your heart.jpg"
     }
 
 ];
