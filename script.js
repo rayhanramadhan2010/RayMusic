@@ -114,11 +114,40 @@ const songs = [
         src: "music/Star.mp3",
         cover: "img/Star.jpg"
     },
-  {
-    title: "cherry flavoured love inside your heart",
-    artist:"wave to earth",
-    src:"music/cherry flavoured love inside your heart.mp3",
-    cover:"img/cherry flavoured love inside your heart.jpg"
+
+    {
+        title: "bittersweet",
+        artist: "Madison Beer",
+        src: "music/bittersweet.mp3",
+        cover: "img/bittersweet.jpg"
+    },
+
+    {
+        title: "K.",
+        artist: "Cigarettes After Sex",
+        src: "music/K..mp3",
+        cover: "img/K..jpg"
+    },
+
+    {
+        title: "My Love Mine All Mine",
+        artist: "Mitski",
+        src: "music/My Love Mine All Mine.mp3",
+        cover: "img/My Love Mine All Mine.jpg"
+    },
+
+    {
+        title: "intro (end of the world)",
+        artist: "Ariana Grande",
+        src: "music/intro (end of the world).mp3",
+        cover: "img/intro (end of the world).jpg"
+    },
+
+    {
+        title: "Enchanted",
+        artist: "Taylor Swift",
+        src: "music/Enchanted.mp3",
+        cover: "img/Enchanted.jpg"
     }
 
 ];
